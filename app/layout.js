@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-neutral text-white`}>
+      <body className={`${inter.className} bg-neutral text-white flex flex-col min-h-screen`}>
         {/* Sticky Navbar */}
         <Navbar />
 

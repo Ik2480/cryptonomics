@@ -1,9 +1,15 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname(); // Get current route
   const [isOpen, setIsOpen] = useState(false);
+
+  // Do not render Navbar on Dashboard page
+  if (pathname === "/Dashboard") return null;
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -16,18 +22,26 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-neutral-900/95 backdrop-blur-md shadow-md">
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between py-4">
-        {/* Logo */}
-        <a href="/" className="flex items-center">
-          <img
-            src="/cryptonomicsLogo.webp"
-            alt="Cryptonomics101 Logo"
-            width={40}
-            height={30}
-          />
-        </a>
+        {/* Logo + Dashboard link */}
+        <div className="flex items-center gap-4">
+          <a href="/" className="flex items-center">
+            <img
+              src="/cryptonomicsLogo.webp"
+              alt="Cryptonomics101 Logo"
+              width={40}
+              height={30}
+            />
+          </a>
+          <a
+            href="/Dashboard"
+            className="px-3 py-1 bg-primary rounded-lg text-white hover:bg-primary/80 transition-colors"
+          >
+            Cryptonomics101
+          </a>
+        </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex flex-1 justify-center space-x-6 items-center">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -37,6 +51,10 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+        </div>
+
+        {/* Login Button */}
+        <div className="hidden md:flex">
           <a
             href="/login"
             className="px-4 py-2 bg-primary rounded-lg text-white hover:bg-primary/80 transition-colors"
@@ -98,6 +116,13 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <a
+            href="/Dashboard"
+            className="block w-full text-center px-4 py-2 bg-primary rounded-lg text-white hover:bg-primary/80 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Cryptonomics101
+          </a>
           <a
             href="/login"
             className="block w-full text-center px-4 py-2 bg-primary rounded-lg text-white hover:bg-primary/80 transition-colors"
