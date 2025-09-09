@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CookieConsent from "./components/CookieConsent";
 import WhatsAppButton from "./components/WhatsAppButton";
+import Disclaimer from "./sections/Disclaimer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         <main className="container mx-auto px-4 lg:px-8 flex-1">
           {children}
         </main>
+        <Disclaimer />
 
         {/* Footer */}
         <Footer />

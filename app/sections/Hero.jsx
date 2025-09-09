@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaYoutube, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 
 export default function Hero() {
   return (
@@ -35,31 +34,6 @@ export default function Hero() {
               className="px-6 py-3 rounded-xl border border-secondary text-secondary font-medium hover:bg-secondary hover:text-white transition-colors"
             >
               Join Community
-            </Link>
-          </div>
-
-          {/* Social Icons */}
-          <div className="flex gap-4 justify-center lg:justify-start mt-4">
-            <Link
-              href="https://youtube.com/"
-              target="_blank"
-              className="p-2 rounded-full bg-red-600 text-white hover:bg-red-500 transition-colors"
-            >
-              <FaYoutube className="text-lg" />
-            </Link>
-            <Link
-              href="https://x.com/"
-              target="_blank"
-              className="p-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
-            >
-              <FaXTwitter className="text-lg" />
-            </Link>
-            <Link
-              href="https://linkedin.com/"
-              target="_blank"
-              className="p-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-colors"
-            >
-              <FaLinkedinIn className="text-lg" />
             </Link>
           </div>
         </motion.div>
