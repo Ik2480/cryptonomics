@@ -1,6 +1,6 @@
 "use client";
 
-// Inline SVG icons to replace react-icons/fa
+// Inline SVG icons
 const ShieldIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-primary">
     <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6l-3.254-1.928a.75.75 0 00-.722.254l-.414.622a.75.75 0 00.254.722l3.42 2.025a.75.75 0 00.9-.091l4.085-4.549a.75.75 0 00-.912-1.224L12.75 12V6z" clipRule="evenodd" />
@@ -20,58 +20,57 @@ const UsersIcon = () => (
   </svg>
 );
 
-export default function About() {
+export default function Mission() {
   const features = [
     {
       icon: <ShieldIcon />,
       title: "Security & Privacy",
-      desc: "Get started with secure wallets, hardware wallets, and two-factor authentication (2FA).",
+      desc: "We put safety first with secure wallets, hardware keys, 2FA, and blockchain best practices.",
     },
     {
       icon: <RocketIcon />,
       title: "Innovation & Impact",
-      desc: "We're blending innovation with real-world impact through our projects.",
+      desc: "From education rewards to gaming on blockchain, we connect fun with real-world financial tools.",
     },
     {
       icon: <UsersIcon />,
       title: "Community & Games",
-      desc: "Learn with a blockchain education reward system and play games like chess.",
+      desc: "Learn, earn, and play—our hub brings people together with blockchain-powered incentives.",
     },
   ];
 
   return (
-    <section id="about" className="w-full py-16 lg:py-24 bg-neutral">
+    <section id="mission" className="w-full py-16 lg:py-24 bg-neutral">
       <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
         {/* Left Content */}
         <div>
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            About <span className="text-primary">Cryptonomics101</span>
+            Our <span className="text-primary">Mission</span>
           </h2>
 
-          <p className="text-gray-300 leading-relaxed mb-8">
-            Cryptonomics 101 is a community fund evolving into a powerful ecosystem. Welcome to your hub for the future of crypto. Join us to shape the future!
+          <p className="text-gray-300 leading-relaxed mb-6">
+            CryptoNomics101 is more than a community fund—it’s a movement to democratize blockchain. 
+            We’re building interconnected payments and business tools, culminating in the fun and rewards of the dominoes-chess gaming mission. 
+            Anchored in the Blockchain of Oz and powered by $BOOZ with the Algorand Number Generator, our ecosystem is designed for fairness, scalability, and playful engagement.
           </p>
-          
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <ShieldIcon className="text-primary text-2xl mt-1" />
-              <div>
-                <h3 className="text-xl font-semibold text-white">Security & Privacy</h3>
-                <p className="mt-2 text-gray-300 leading-relaxed">
-                  Security and privacy lead the way. Get started with a secure wallet, use hardware wallets and two-factor authentication (2FA), a VPN, and explore terms like DeFi and private keys to stay safe.
-                </p>
-              </div>
-            </div>
 
-            <div className="flex items-start gap-4">
-              <RocketIcon className="text-primary text-2xl mt-1" />
-              <div>
-                <h3 className="text-xl font-semibold text-white">Our Projects</h3>
-                <p className="mt-2 text-gray-300 leading-relaxed">
-                  We’re blending innovation with real-world impact through four exciting projects: a blockchain education reward system to empower learners, token launches for content creators, payment systems for businesses, and blockchain-based board games like dominoes and chess.
-                </p>
+          <p className="text-gray-300 leading-relaxed mb-8">
+            Launched organically on <span className="text-primary">August 31, 2025, at 3:41 AM</span> with no presale, 
+            CryptoNomics101 delivers automated, equitable incentives across the network. 
+            Together, we’re shaping a vibrant, enjoyable decentralized future.
+          </p>
+
+          <div className="space-y-6">
+            {features.map((f, i) => (
+              <div key={i} className="flex items-start gap-4">
+                {f.icon}
+                <div>
+                  <h3 className="text-xl font-semibold text-white">{f.title}</h3>
+                  <p className="mt-2 text-gray-300 leading-relaxed">{f.desc}</p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -83,9 +82,7 @@ export default function About() {
               className="bg-neutral-800 p-6 rounded-xl shadow-md hover:scale-105 transform transition-transform duration-300"
             >
               {feature.icon}
-              <h3 className="mt-4 text-xl font-semibold text-white">
-                {feature.title}
-              </h3>
+              <h3 className="mt-4 text-xl font-semibold text-white">{feature.title}</h3>
               <p className="mt-2 text-gray-400 text-sm">{feature.desc}</p>
             </div>
           ))}

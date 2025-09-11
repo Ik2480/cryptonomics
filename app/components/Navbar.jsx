@@ -11,10 +11,11 @@ export default function Navbar() {
   if (pathname === "/Dashboard") return null;
 
   const navLinks = [
-    { name: "Discover", href: "#about" },
+    { name: "Our Mission", href: "#mission" },
     { name: "Features", href: "#features" },
     { name: "Blogs", href: "#blogs" },
-    { name: "Dashboard", href: "/Dashboard" },
+   { name: "Token info", href: "/TokenInfo" },
+
   ];
 
   return (

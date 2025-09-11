@@ -46,7 +46,7 @@ export default function Hero() {
           className="flex justify-center"
         >
           <Image
-            src="/herocryptonomics.webp" // replace with real image in /public
+            src="/herocryptonomics01.webp" // replace with real image in /public
             alt="Cryptonomics illustration"
             width={500}
             height={400}
