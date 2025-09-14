@@ -6,32 +6,31 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="w-full py-16 lg:py-24">
-      <div className="container mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+    <section className="relative w-full h-auto flex flex-col items-center justify-center bg-[var(--color-bg)] py-12 px-4 md:py-20 lg:py-24">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
           className="space-y-6 text-center lg:text-left"
         >
-          <h1 className="text-4xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Welcome to Cryptonomics 101
+          <h1 className="text-4xl md:text-5xl font-extrabold text-cyan-400 mt-8 mb-4">
+            Blockchain of Oz – $BOOZ Live
           </h1>
-          <p className="text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
-            Learn, explore, and stay updated with the latest in blockchain and
-            cryptocurrency. Your journey into the future of finance starts here.
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
+            Democratizing blockchain through interconnected payments, business tools, and gaming rewards — anchored in the Blockchain of Oz.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Link
               href="#about"
-              className="px-6 py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary/80 transition-colors"
+              className="px-6 py-3 rounded-xl bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 transition text-sm font-semibold"
             >
               Get Started
             </Link>
             <Link
               href="#community"
-              className="px-6 py-3 rounded-xl border border-secondary text-secondary font-medium hover:bg-secondary hover:text-white transition-colors"
+              className="px-6 py-3 rounded-xl border border-cyan-400 text-cyan-400 font-medium hover:bg-cyan-400 hover:text-white transition-colors"
             >
               Join Community
             </Link>
@@ -46,7 +45,7 @@ export default function Hero() {
           className="flex justify-center"
         >
           <Image
-            src="/herocryptonomics01.webp" // replace with real image in /public
+            src="/herocryptonomics01.webp"
             alt="Cryptonomics illustration"
             width={500}
             height={400}
